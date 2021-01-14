@@ -8,6 +8,11 @@ class PrototypesController < ApplicationController
   end
 
   def create
+    @prototype = Prototype.find(params[:prototype_id])
+    if @prototype.save
+      redirect_to root_path
+    else
+      render :new
   end
 
   private
