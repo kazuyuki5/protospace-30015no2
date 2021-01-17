@@ -15,6 +15,10 @@ class PrototypesController < ApplicationController
     else
       render :new
     end
+
+    def show
+      @prototype = Prototype.find(params[:id])
+    end
   end
 
   private
