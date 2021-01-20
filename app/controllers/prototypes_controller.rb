@@ -34,6 +34,15 @@ class PrototypesController < ApplicationController
       end
     end
 
+    def destroy
+      @prototype = Prototype.find(params[:id])
+      if @prototype.destroy
+        redirect_to root_path
+      else
+        render :show
+      end
+    end
+
   private
 
   def prototype_params
